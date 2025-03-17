@@ -1,0 +1,2 @@
+.venv\\Scripts\\activate
+muốn thoát khỏi môi trường ảo thì sử dụng lệnh deactivate

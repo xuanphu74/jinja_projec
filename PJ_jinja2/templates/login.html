@@ -1,0 +1,31 @@
+<!-- Container for the login form -->
+{% extends "base.html" %} {% block content %}
+<div class="login-container">
+	<!-- Logo image -->
+	<img src="../../assets/logoOSAS.png" alt="Logo" />
+
+	<!-- Login title -->
+	<h2>Login</h2>
+
+	<!-- Input field for the username/phone number/email -->
+	<td><label for="username">Username:</label></td>
+	<input
+		type="text"
+		id="username"
+		placeholder="Username/Phone Number/Email"
+		value="admin" />
+
+	<!-- Input field for the password -->
+	<td><label for="password">Password:</label></td>
+	<input type="password" id="password" placeholder="Password" value="admin" />
+
+	<!-- Link to the forgot password page -->
+	<a href="../forgotpassword/forgotpassword.html">Forgot Password?</a>
+
+	<!-- Login button that triggers the validateLogin function -->
+	<button onclick="validateLogin()">Login</button>
+
+	<!-- Container for displaying error messages -->
+	<div id="error-message" class="error-message"></div>
+</div>
+{% endblock content %}
