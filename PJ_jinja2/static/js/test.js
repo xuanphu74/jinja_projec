@@ -1,24 +1,12 @@
-// Check login status
-window.onload = function () {
-	if (localStorage.getItem("isLoggedIn") !== "true") {
-		location.href = "../login";
-	}
-	// Initialize dashboard data
-	updateDashboard();
 
-	// Add active class handler for menu items
-	setupMenuHighlighting();
-};
 
-// Setup menu highlighting
-function setupMenuHighlighting() {
+export function setupMenuHighlighting() {
 	// Get current page path
 	const currentPath = window.location.pathname;
 
 	// Remove active class from all menu items
 	document.querySelectorAll(".menu-item").forEach((item) => {
-		// item.classList.remove("active");
-		console.log("moas laij nuwa")
+		item.classList.remove("active");
 	});
 
 	// Add active class to current page menu item
@@ -37,13 +25,6 @@ function setupMenuHighlighting() {
 		document.querySelector('a[href="dashboard.html"]').classList.add("active");
 	}
 }
-
-// Logout function
-function logout() {
-	localStorage.removeItem("isLoggedIn");
-	location.href = "../../templates/login.html";
-}
-
 // Sample data - would be replaced by API calls in production
 const users = [
 	{
@@ -98,7 +79,7 @@ const users = [
 	},
 ];
 
-function updateDashboard() {
+export function  updateDashboard() {
 	// Update stats
 	const totalUsers = users.length;
 	const activeUsers = users.filter((user) => user.status === "active").length;
@@ -159,7 +140,7 @@ function updateDashboard() {
 	viewUserDetails(1);
 }
 
-function viewUserDetails(userId) {
+export function viewUserDetails(userId) {
 	const user = users.find((u) => u.id === userId);
 	if (!user) return;
 
@@ -201,3 +182,4 @@ function viewUserDetails(userId) {
 		}
 	});
 }
+// import { setupMenuHighlighting } from './show.js';

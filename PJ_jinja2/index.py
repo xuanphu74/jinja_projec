@@ -5,12 +5,12 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return render_template("index.html")
-    
-
 @app.route('/login')
 def login():
     return render_template("login.html")
-
+@app.route('/dashboard')
+def dashboard():
+    return render_template("dashboard.html")
 @app.route('/user/')
 def show_user():
     return render_template("user.html")
@@ -20,6 +20,8 @@ def show_profile():
 @app.route('/setting/')
 def setting():
     return render_template("setting.html")
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)

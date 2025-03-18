@@ -1,31 +1,44 @@
-<!-- Container for the login form -->
-{% extends "base.html" %} {% block content %}
-<div class="login-container">
-	<!-- Logo image -->
-	<img src="../../assets/logoOSAS.png" alt="Logo" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSAS</title>
+    <link rel="stylesheet" href="login.css">
+    <script src="login.js" defer></script>    
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+    <!-- Container for the login form -->
+    <div class="login-container">
 
-	<!-- Login title -->
-	<h2>Login</h2>
+        <!-- Logo image -->
+        <img src="{{ url_for('static', filename='images/logoOSAS.png') }}" alt="Logo">
 
-	<!-- Input field for the username/phone number/email -->
-	<td><label for="username">Username:</label></td>
-	<input
-		type="text"
-		id="username"
-		placeholder="Username/Phone Number/Email"
-		value="admin" />
+        <!-- Login title -->
+        <h2>Login</h2>
 
-	<!-- Input field for the password -->
-	<td><label for="password">Password:</label></td>
-	<input type="password" id="password" placeholder="Password" value="admin" />
+        <!-- Input field for the username/phone number/email -->
+        <td><label for="username">Username:</label></td>
+        <input type="text" id="username" placeholder="Username/Phone Number/Email" value="admin">
 
-	<!-- Link to the forgot password page -->
-	<a href="../forgotpassword/forgotpassword.html">Forgot Password?</a>
+        <!-- Input field for the password -->
+        <td><label for="password">Password:</label></td>
+        <input type="password" id="password" placeholder="Password" value="admin">
 
-	<!-- Login button that triggers the validateLogin function -->
-	<button onclick="validateLogin()">Login</button>
+        <!-- Link to the forgot password page -->
+        <a href="../forgotpassword/forgotpassword.html">Forgot Password?</a>
 
-	<!-- Container for displaying error messages -->
-	<div id="error-message" class="error-message"></div>
-</div>
-{% endblock content %}
+        <!-- Login button that triggers the validateLogin function -->
+        <button onclick="validateLogin()">Login</button>
+
+        <!-- Container for displaying error messages -->
+        <div id="error-message" class="error-message"></div>
+    </div>
+</body>
+
+<script
+		type="module"
+		src="{{ url_for('static', filename='js/login.js') }}"
+		defer></script>
+</html>
