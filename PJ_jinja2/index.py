@@ -22,6 +22,5 @@ def setting():
     return render_template("setting.html")
 
 
-
 if __name__ == '__main__':
     app.run(debug=True)
